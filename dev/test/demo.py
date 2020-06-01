@@ -18,6 +18,7 @@ def test_analyze_data():
 def analyze_data_file(data_file):
     with open(data_file) as data:
          for row in data:
+
             # Analyze each row of the data
             data = row.split()
             if len(data) > 1:
@@ -29,6 +30,7 @@ def analyze_result(date_of_birth, had_vaccine):
     # Check corner case of younger than 10
     if age < 10:
         percentile_group = 0
+
     # Check corner case of older than 90
     elif age >= 90:
         percentile_group = 9
