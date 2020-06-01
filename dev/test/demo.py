@@ -1,5 +1,3 @@
-import csv
-import os
 import pytest
 from .cfg.test_configuration import TestConfiguration
 from datetime import datetime
