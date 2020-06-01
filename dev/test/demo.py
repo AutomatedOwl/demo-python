@@ -4,8 +4,9 @@ import pytest
 from .cfg.test_configuration import TestConfiguration
 from datetime import datetime
 
-# Initialize a list of tuples - index (0, 1, .. 9) represents percentile group,
-# tuples represents counters of performed(left) and non-performed(right) vaccines for each percentile group
+# Initialize a list of vaccine data counters - each index (0, 1, .. 9) represents percentile group,
+# Inner lists represent counters of performed(left) and non-performed(right) vaccines for each percentile group
+# All counters are being initialized with '0' value
 groupToVaccineRates = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
 config = TestConfiguration()
 
