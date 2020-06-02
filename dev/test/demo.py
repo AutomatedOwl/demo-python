@@ -67,7 +67,7 @@ def print_vaccine_rates():
     for percentile_group in groupToVaccineRates:
         total_subjects_in_group = percentile_group[config.PERFORMED_VACCINE_COUNTER_INDEX] + \
             percentile_group[config.NON_PERFORMED_VACCINE_COUNTER_INDEX]
-        if total_subjects_in_group > 1:
+        if total_subjects_in_group > 0:
             vaccine_rates = get_percentage(
                 percentile_group[config.PERFORMED_VACCINE_COUNTER_INDEX], total_subjects_in_group)
             print(config.groups.get(index) + ': %' + str(vaccine_rates))
