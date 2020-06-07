@@ -5,7 +5,7 @@ from datetime import datetime
 # Initialize a list of vaccine data counters - each index (0, 1, .. 9) represents percentile group,
 # Inner lists represent counters of performed(left) and non-performed(right) vaccines for each percentile group
 # All counters are being initialized with '0' value
-groupToVaccineRates = [[0, 0], [0, 0], [0, 0], [0, 0],
+group_to_vaccine_rates = [[0, 0], [0, 0], [0, 0], [0, 0],
                        [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
 config = TestConfiguration()
 
@@ -42,9 +42,9 @@ def analyze_result(date_of_birth, had_vaccine):
 
     # Check whether given subject had vaccine
     if "Yes" in had_vaccine:
-        groupToVaccineRates[percentile_group][0] += 1
+        group_to_vaccine_rates[percentile_group][0] += 1
     elif "No" in had_vaccine:
-        groupToVaccineRates[percentile_group][1] += 1
+        group_to_vaccine_rates[percentile_group][1] += 1
 
 
 def get_percentile(date_of_birth):
@@ -64,7 +64,7 @@ def get_percentage(part, whole):
 def print_vaccine_rates():
     # Initialize index at zero
     index = 0
-    for percentile_group in groupToVaccineRates:
+    for percentile_group in group_to_vaccine_rates:
         total_subjects_in_group = percentile_group[config.PERFORMED_VACCINE_COUNTER_INDEX] + \
             percentile_group[config.NON_PERFORMED_VACCINE_COUNTER_INDEX]
         if total_subjects_in_group > 0:
